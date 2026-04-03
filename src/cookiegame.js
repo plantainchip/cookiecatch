@@ -73,19 +73,26 @@ export default function () {
     pinkbowl.play("bowldefault")
 
     onKeyDown("a", () => {
-        pinkbowl.move(-SPEED,0,)
-
+        if(pinkbowl.pos.x > 9){
+            pinkbowl.move(-SPEED,0,)
+        }
     });
     onKeyDown("d", () => {
-        pinkbowl.move(SPEED,0)
+        if(pinkbowl.pos.x < 87){
+            pinkbowl.move(SPEED,0)
+        }
     });
 
     onKeyDown("left", () => {
-        pinkbowl.move(-SPEED,0,)
-
+        if(pinkbowl.pos.x > 9){
+            pinkbowl.move(-SPEED,0,)
+        }
     });
+
     onKeyDown("right", () => {
-        pinkbowl.move(SPEED,0)
+        if(pinkbowl.pos.x < 87){
+            pinkbowl.move(SPEED,0)
+        }
     });
 
     onKeyPress("a",()=>{
@@ -105,7 +112,7 @@ export default function () {
         play("drag",{volume:0.5})
     })
 
-    onKeyRelease([`a`, `s`, `left`, `right`], () => {
+    onKeyRelease([`a`, `d`, `left`, `right`], () => {
         pinkbowl.play("bowldefault")
     });
 
