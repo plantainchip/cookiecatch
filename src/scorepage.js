@@ -66,6 +66,7 @@ export default function () {
     };
 
     if((localStorage.getItem("score")) === null){
+        bestLabel.moveTo(42,32)
         localStorage.setItem("score",window.STATE.scorecount)
     } else {
         
