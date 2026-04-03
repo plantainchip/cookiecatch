@@ -16,8 +16,8 @@ kaplay({
 debug.inspect = false
 
 // loadRoot("./"); // A good idea for Itch.io publishing later
-loadSprite("bean", "sprites/bean.png");
-loadSprite("titlescreenbackground", "/sprites/assets/titlescreenspritesheet.png",{
+
+loadSprite("titlescreenbackground", "./sprites/assets/titlescreenspritesheet.png",{
     sliceX:12,sliceY:1,
     anims:{
         playtitle:{
@@ -27,7 +27,7 @@ loadSprite("titlescreenbackground", "/sprites/assets/titlescreenspritesheet.png"
         }
     }
 });
-loadSprite("cookiepoint","/sprites/assets/cookiepointerspritesheet.png",{
+loadSprite("cookiepoint","./sprites/assets/cookiepointerspritesheet.png",{
     sliceX:4,sliceY:1,
     anims:{
         movepoint:{
@@ -37,7 +37,7 @@ loadSprite("cookiepoint","/sprites/assets/cookiepointerspritesheet.png",{
         }
     }
 });
-loadSprite("bowl","/sprites/assets/bowlspritesheet.png",{
+loadSprite("bowl","./sprites/assets/bowlspritesheet.png",{
     sliceX: 5, sliceY: 1,
     anims:{
         bowldefault:{
@@ -57,7 +57,7 @@ loadSprite("bowl","/sprites/assets/bowlspritesheet.png",{
     }
 })
 
-loadSprite("best","/sprites/assets/bestspritesheet.png",{
+loadSprite("best","./sprites/assets/bestspritesheet.png",{
     sliceX: 7, sliceY: 1,
     anims:{
         bestdefault:{
@@ -68,36 +68,35 @@ loadSprite("best","/sprites/assets/bestspritesheet.png",{
 
     }
 })
-loadSprite("kitchenbackground", "/sprites/assets/kitchenbackground.png")
-loadSprite("bakingpan", "/sprites/assets/bakingpan.png")
-loadSprite("infopage", "/sprites/assets/infopage.png")
-loadSprite("bakingpanbestscores", "/sprites/assets/bakingpanbestscores.png")
-// loadSprite("bowl", "/sprites/assets/bowl.png")
-loadSprite("bigcookie1", "/sprites/assets/bigcookie1.png")
-loadSprite("bigcookie2", "/sprites/assets/bigcookie2.png")
-loadSprite("bigcookie3", "/sprites/assets/bigcookie3.png")
-loadSprite("smallcookie1", "/sprites/assets/smallcookie1.png")
-loadSprite("smallcookie2", "/sprites/assets/smallcookie2.png")
-loadSprite("smallcookie3", "/sprites/assets/smallcookie3.png")
-loadSprite("dubiouscookie1", "/sprites/assets/dubiouscookie1.png")
-loadSprite("dubiouscookie2", "/sprites/assets/dubiouscookie2.png")
-loadSprite("milk", "/sprites/assets/milk.png")
-loadSprite("plus2","/sprites/assets/plus2.png")
-loadSprite("plus30","/sprites/assets/plus30.png")
-loadSprite("minus5","/sprites/assets/minus5.png")
-loadSprite("minus10","/sprites/assets/minus10.png")
-loadSprite("slowed","/sprites/assets/slowed.png")
-loadSprite("stuck","/sprites/assets/stuck.png")
-loadFont("tiny5", "/sprites/assets/Tiny5-Regular.ttf");
-loadSound("crunch","/sprites/assets/makigai_maimai-crunchy-bite-450650-[AudioTrimmer.com].mp3")
-loadSound("bonus","/sprites/assets/universfield-game-bonus-03-487857.mp3")
-loadSound("negativechime","/sprites/assets/universfield-system-notification-04-206493 (mp3cut.net).mp3")
-loadSound("levelcomplete","/sprites/assets/universfield-level-up-02-199574.mp3")
-loadSound("bubble","/sprites/assets/universfield-bubble-pop-293342.mp3")
-loadSound("swoosh","/sprites/assets/universfield-swoosh-06-351021.mp3")
-loadSound("drag","/sprites/assets/freesound_community-whoosh-clothing-drag-42291.mp3")
-loadSound("elevator1","/sprites/assets/hitslab-elevator-elevator-jazz-lounge-music-412339.mp3")
-loadSound("elevator2","/sprites/assets/hitslab-lounge-jazz-elevator-music-324902.mp3")
+loadSprite("kitchenbackground", "./sprites/assets/kitchenbackground.png")
+loadSprite("bakingpan", "./sprites/assets/bakingpan.png")
+loadSprite("infopage", "./sprites/assets/infopage.png")
+loadSprite("bakingpanbestscores", "./sprites/assets/bakingpanbestscores.png")
+loadSprite("bigcookie1", "./sprites/assets/bigcookie1.png")
+loadSprite("bigcookie2", "./sprites/assets/bigcookie2.png")
+loadSprite("bigcookie3", "./sprites/assets/bigcookie3.png")
+loadSprite("smallcookie1", "./sprites/assets/smallcookie1.png")
+loadSprite("smallcookie2", "./sprites/assets/smallcookie2.png")
+loadSprite("smallcookie3", "./sprites/assets/smallcookie3.png")
+loadSprite("dubiouscookie1", "./sprites/assets/dubiouscookie1.png")
+loadSprite("dubiouscookie2", "./sprites/assets/dubiouscookie2.png")
+loadSprite("milk", "./sprites/assets/milk.png")
+loadSprite("plus2","./sprites/assets/plus2.png")
+loadSprite("plus30","./sprites/assets/plus30.png")
+loadSprite("minus5","./sprites/assets/minus5.png")
+loadSprite("minus10","./sprites/assets/minus10.png")
+loadSprite("slowed","./sprites/assets/slowed.png")
+loadSprite("stuck","./sprites/assets/stuck.png")
+loadFont("tiny5", "./sprites/assets/Tiny5-Regular.ttf");
+loadSound("crunch","./sprites/assets/makigai_maimai-crunchy-bite-450650-[AudioTrimmer.com].mp3")
+loadSound("bonus","./sprites/assets/universfield-game-bonus-03-487857.mp3")
+loadSound("negativechime","./sprites/assets/universfield-system-notification-04-206493 (mp3cut.net).mp3")
+loadSound("levelcomplete","./sprites/assets/universfield-level-up-02-199574.mp3")
+loadSound("bubble","./sprites/assets/universfield-bubble-pop-293342.mp3")
+loadSound("swoosh","./sprites/assets/universfield-swoosh-06-351021.mp3")
+loadSound("drag","./sprites/assets/freesound_community-whoosh-clothing-drag-42291.mp3")
+loadSound("elevator1","./sprites/assets/hitslab-elevator-elevator-jazz-lounge-music-412339.mp3")
+loadSound("elevator2","./sprites/assets/hitslab-lounge-jazz-elevator-music-324902.mp3")
 
 
 scene("titlescreen",titlescreen)
