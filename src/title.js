@@ -62,6 +62,41 @@ export default function () {
         
     })
 
+    onGamepadButtonPress("dpad-up",()=>{
+        if(cookiepointer.pos.y == 38){
+            play("bubble",{volume:0.3})
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y-6)
+        }
+    })
+
+    onGamepadButtonPress("dpad-down",()=>{
+        if(cookiepointer.pos.y == 50){
+            play("bubble",{volume:0.3})
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y+6)
+        }
+    })
+
+    onGamepadButtonPress("east",()=>{
+        if(cookiepointer.pos.y == 38){
+            music.paused = true
+            play("crunch")
+            go("cookiegame");
+        } else if (cookiepointer.pos.y == 44){
+            music.paused = true
+            play("crunch")
+            go("infopage");
+        } else if (cookiepointer.pos.y == 50){
+            music.paused = true
+            play("crunch")
+            go("bestscore");
+        }
+    })
+
+
     onKeyPress("space",() => {
         if(cookiepointer.pos.y == 38){
             music.paused = true

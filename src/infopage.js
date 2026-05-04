@@ -70,6 +70,34 @@ export default function () {
         
     })
 
+    onGamepadButtonPress("dpad-up",()=>{
+        if(cookiepointer.pos.y == 48){
+            play("bubble",{volume:0.3})
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y-6)
+        }
+    })
+
+    onGamepadButtonPress("dpad-down",()=>{
+        if(cookiepointer.pos.y == 48){
+            play("bubble",{volume:0.3})
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y+6)
+        }
+    })
+
+    onGamepadButtonPress("east",()=>{
+        if(cookiepointer.pos.y == 48){
+            music.paused = true
+            play("crunch")
+            go("titlescreen");
+        }
+    })
+
+
+
     onKeyPress("space",() => {
         if(cookiepointer.pos.y == 48){
             music.paused = true

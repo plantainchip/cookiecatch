@@ -162,6 +162,41 @@ export default function () {
         }
     })
 
+    onGamepadButtonPress("dpad-up",()=>{
+        if(cookiepointer.pos.y == 38){
+
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y-8)
+        }
+    })
+
+    onGamepadButtonPress("dpad-down",()=>{
+        if(cookiepointer.pos.y == 46){
+
+        } else {
+            play("bubble",{volume:0.3})
+            cookiepointer.moveTo(cookiepointer.pos.x,cookiepointer.pos.y+8)
+        }
+    })
+
+    onGamepadButtonPress("east",()=>{
+        if(cookiepointer.pos.y == 38){
+            window.STATE.cookiecount = 0
+            window.STATE.timecount = 0
+            music.paused = true
+            play("crunch")
+            go("cookiegame");
+        }
+        if(cookiepointer.pos.y == 46){
+            window.STATE.cookiecount = 0
+            window.STATE.timecount = 0
+            music.paused = true
+            play("crunch")
+            go("titlescreen");
+        }
+    })
+
 
 
 }

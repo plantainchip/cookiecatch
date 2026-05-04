@@ -4,6 +4,7 @@ import { spawngreendubiouscookie } from "./greendubiouscookie";
 import { spawnbluedubiouscookie } from "./bluedubiouscookie";
 import { spawnswirlcookie } from "./swirlcookie";
 import { spawnchristmascookie } from "./christmascookie";
+import milk, { spawnmilk } from "./milk";
 
 
 export default function () {
@@ -71,6 +72,7 @@ export default function () {
         "pinkbowl"
     ])
     pinkbowl.play("bowldefault")
+    //KEYBOARD CONTROLS
 
     onKeyDown("a", () => {
         if(pinkbowl.pos.x > 9){
@@ -116,6 +118,31 @@ export default function () {
         pinkbowl.play("bowldefault")
     });
 
+    // GAMEPAD CONTROLS
+
+    onGamepadButtonDown("dpad-left",()=>{
+        if(pinkbowl.pos.x > 9){
+            pinkbowl.move(-SPEED,0,)
+        }
+    })
+    onGamepadButtonDown("dpad-right",()=>{
+        if(pinkbowl.pos.x < 87){
+            pinkbowl.move(SPEED,0)
+        }
+    })
+
+    onGamepadButtonPress("dpad-left",()=>{
+        pinkbowl.play("bowlleft")
+        play("drag",{volume:0.5})
+    })
+    onGamepadButtonPress("dpad-right",()=>{
+        pinkbowl.play("bowlright")
+        play("drag",{volume:0.5})
+    })
+    onGamepadButtonRelease([`dpad-left`,`dpad-right`],()=>{
+        pinkbowl.play("bowldefault")
+    })
+
 
     // spawning cookies -------------------------------
     
@@ -141,6 +168,10 @@ export default function () {
         spawnbluedubiouscookie()
     })
 
+    // wait(10,()=>{
+    //     spawnmilk()
+    // })
+
     // handles count down time =================================== TIME TIME TIME
     let currTime = 61;
 
@@ -156,8 +187,8 @@ export default function () {
     ])
 
     // indicators for time added or subtracted =-=-=-=-=-=-
-    const plus30 = add([
-        sprite("plus30"),
+    const plus10 = add([
+        sprite("plus10"),
         pos(pinkbowl.pos.x,70),
         opacity(1)
     ])
@@ -185,6 +216,12 @@ export default function () {
         sprite("slowed"),
         pos(pinkbowl.pos.x,70),
         opacity(1)
+    ])
+    const milksplash = add([
+        sprite("milksplash"),
+        pos(pinkbowl.pos.x,70),
+        opacity(1),
+        z(10)
     ])
 
     // =-=-=-=-=-=-
@@ -244,6 +281,22 @@ export default function () {
         })
     })
 
+    onCollideUpdate("pinkbowl","milkglass",()=>{
+        // showing players time added
+        milksplash.moveTo(0,0)
+        wait(1.7, () => {
+            milksplash.moveTo(pinkbowl.pos.x,70)
+
+        })
+        //effects
+        play("negativechime",{volume:0.5})
+        // currTime -= 5
+        // SPEED = 40
+        // wait(3,()=>{
+        //     SPEED = 100
+        // })
+    })
+
     onCollideUpdate("pinkbowl","swirlcookie",()=>{
         // showing players time added
         plus2.moveTo(pinkbowl.pos.x,pinkbowl.pos.y-10)
@@ -256,12 +309,12 @@ export default function () {
 
     onCollideUpdate("pinkbowl","christmascookie",()=>{
         // showing players time added
-        plus30.moveTo(pinkbowl.pos.x,pinkbowl.pos.y-10)
+        plus10.moveTo(pinkbowl.pos.x,pinkbowl.pos.y-10)
         wait(0.7, () => {
-            plus30.moveTo(pinkbowl.pos.x,70)
+            plus10.moveTo(pinkbowl.pos.x,70)
         })
         //effects
-        currTime += 30
+        currTime += 10
         SPEED = 130
         wait(3,()=>{
             SPEED = 100
