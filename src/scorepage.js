@@ -180,7 +180,7 @@ export default function () {
         }
     })
 
-    onGamepadButtonPress("east",()=>{
+    onGamepadButtonPress("south",()=>{
         if(cookiepointer.pos.y == 38){
             window.STATE.cookiecount = 0
             window.STATE.timecount = 0
@@ -196,6 +196,8 @@ export default function () {
             go("titlescreen");
         }
     })
+    
+    onGamepadButtonPress("east",()=>{ setFullscreen(!isFullscreen())});
 
 
 

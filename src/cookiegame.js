@@ -143,6 +143,8 @@ export default function () {
         pinkbowl.play("bowldefault")
     })
 
+    onGamepadButtonPress("east",()=>{ setFullscreen(!isFullscreen())});
+
 
     // spawning cookies -------------------------------
     

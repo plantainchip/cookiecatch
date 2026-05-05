@@ -149,13 +149,15 @@ export default function () {
         }
     })
 
-    onGamepadButtonPress("east",()=>{
+    onGamepadButtonPress("south",()=>{
         if(cookiepointer.pos.y == 48){
             music.paused = true
             play("crunch")
             go("titlescreen");
         }
     })
+
+    onGamepadButtonPress("east",()=>{ setFullscreen(!isFullscreen())});
 
 
 
