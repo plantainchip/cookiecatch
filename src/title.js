@@ -80,7 +80,7 @@ export default function () {
         }
     })
 
-    onGamepadButtonPress("east",()=>{
+    onGamepadButtonPress("north",()=>{
         if(cookiepointer.pos.y == 38){
             music.paused = true
             play("crunch")
@@ -95,6 +95,8 @@ export default function () {
             go("bestscore");
         }
     })
+
+    onGamepadButtonPress("west",()=>{ setFullscreen(!isFullscreen())});
 
 
     onKeyPress("space",() => {
