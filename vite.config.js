@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const kaplayCongrats = () => {
     return {
         name: "vite-plugin-kaplay-hello",
@@ -35,8 +37,6 @@ export default defineConfig({
             },
         },
     },
-    plugins: [
-        // Disable messages removing this line
-        kaplayCongrats(),
-    ],
+    plugins: [// Disable messages removing this line
+    kaplayCongrats(), cloudflare()],
 });
